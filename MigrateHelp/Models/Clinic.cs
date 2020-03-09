@@ -8,6 +8,7 @@ namespace MigrateHelp.Models
     public class Clinic
     {
         public string url { get; set; }
+        public string fullAddress { get; set; }
         public string phone { get; set; }
         public string fax { get; set; }
         public string add1 { get; set; }
@@ -29,6 +30,8 @@ namespace MigrateHelp.Models
         public string geotag { get; set; }
         public bool multiDay { get; set; }
 
+        public List<string> banners { get; set; }
+
         public Clinic()
         {
 
@@ -46,7 +49,8 @@ namespace MigrateHelp.Models
         string ampm4,
         string busName,
         string geotag,
-        bool multiDay
+        bool multiDay,
+        List<string> banners
         )
         {
             this.add1 = add1;
@@ -70,6 +74,16 @@ namespace MigrateHelp.Models
             this.busName = busName;
             this.geotag = geotag;
             this.multiDay = multiDay;
+            this.banners = banners;
+
+            //Make string for insert full address
+            //char[] MyChar = { ',', '.', '/'};
+
+            string fa = (add1 + '+' + city.Replace(",", "")).Trim();
+
+            this.fullAddress = fa.Replace(' ', '+');
+
+            //this.fullAddress = add1 +add2
 
 
         }

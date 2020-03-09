@@ -37,11 +37,19 @@ namespace MigrateHelp.Controllers
         string ampm3,
         string ampm4,
         string busName,
-        string geotag, bool multiDay)
+        string geotag, bool multiDay, string banner1, string banner2, string banner3, string banner4, string banner5)
         {
+            List<string> ban = new List<string> { banner1, banner2, banner3, banner4, banner5 };
+
+            for (int i = 0; i < ban.Count; i++) 
+            {
+                //ban[i] = ban[i].Substring(78,ban[i].Length - 79);
+                ban[i] = ban[i].Split("Banners/")[1];
+            }
+
             Clinic clin = new Clinic(url, phone, fax, add1, add2,
              city, googUrl, embedUrl, days1, days2, hours1,
-         hours2, hours3, hours4, ampm1, ampm2, ampm3, ampm4, busName, geotag, multiDay);
+         hours2, hours3, hours4, ampm1, ampm2, ampm3, ampm4, busName, geotag, multiDay, ban);
 
             return View(clin);
         }

@@ -1,115 +1,115 @@
 ﻿@model Clinic
 
 <h3>Landing Banner</h3>
-    &lt;header style="background: url('/Portals/92/Assets/Images/Clinic_Microsites/Banners/fullbanner-fpo_clinic_microsite.jpg') 0% 0% / cover no-repeat scroll transparent;"&gt; <br />
-        &lt;a href="/clinic-locations/@Model.url\.aspx"&gt; <br />
-        &lt;div class="overlay"&gt; <br />
-        &lt;div class="container"&gt; <br />
-        &lt;h1&gt;@Model.busName &lt;span&gt;@Model.geotag&lt;/span&gt;&lt;/h1&gt; <br />
-        &lt;/div&gt; <br />
-        &lt;/div&gt; <br />
-        &lt;/a&gt; <br />
-        &lt;/header&gt; <br />
+    &lt;header style="background: url('/Portals/92/Assets/Images/Clinic_Microsites/Banners/@Model.banners[0]') 0% 0% / cover no-repeat scroll transparent;"&gt; <br/>
+        &lt;a href="/clinic-locations/@Model.url\.aspx"&gt; <br/>
+        &lt;div class="overlay"&gt; <br/>
+        &lt;div class="container"&gt; <br/>
+        &lt;h1&gt;@Model.busName &lt;span&gt;@Model.geotag&lt;/span&gt;&lt;/h1&gt; <br/>
+        &lt;/div&gt; <br/>
+        &lt;/div&gt; <br/>
+        &lt;/a&gt; <br/>
+        &lt;/header&gt; <br/>
 
-        <br />
+        <br/>
 
         <h3>Side Contact Content</h3>
 
-        &lt;!--MOBILE CONTACT DRAWER--&gt; <br />
-        &lt;div class="row"&gt;<br />
-        &lt;div class="sidebar"&gt;<br />
-        &lt;div class="mobile-contact-drawer"&gt; &lt;a href="#" class="active mobile-phone"&gt;&lt;span class="icon-phone"&gt;&lt;/span&gt;&lt;/a&gt; &lt;a href="#" class="mobile-location"&gt;&lt;span class="icon-get-directions"&gt;&lt;/span&gt;&lt;/a&gt; &lt;a href="#" class="mobile-hours"&gt;&lt;span class="icon-wait-time"&gt;&lt;/span&gt;&lt;/a&gt; &lt;a href="#" class="mobile-info"&gt;&lt;span class="icon-who-we-are"&gt;&lt;/span&gt;&lt;/a&gt;<br />
-        &lt;div class="active mobile-phone-content"&gt; &lt;a href="tel:@Model.phone"&gt; &lt;strong&gt;@Model.phone&lt;/strong&gt; &lt;span&gt;Tap to call now&lt;/span&gt; &lt;/a&gt;<br />
-        &lt;/div&gt;<br />
-        &lt;div class="mobile-location-content"&gt; &lt;a href="maps:q=INSERT+FULL+ADDRESS+HERE" target="_blank"&gt;@Model.add1&lt;br&gt;<br />
+        &lt;!--MOBILE CONTACT DRAWER--&gt; <br/>
+        &lt;div class="row"&gt;<br/>
+        &lt;div class="sidebar"&gt;<br/>
+        &lt;div class="mobile-contact-drawer"&gt; &lt;a href="#" class="active mobile-phone"&gt;&lt;span class="icon-phone"&gt;&lt;/span&gt;&lt;/a&gt; &lt;a href="#" class="mobile-location"&gt;&lt;span class="icon-get-directions"&gt;&lt;/span&gt;&lt;/a&gt; &lt;a href="#" class="mobile-hours"&gt;&lt;span class="icon-wait-time"&gt;&lt;/span&gt;&lt;/a&gt; &lt;a href="#" class="mobile-info"&gt;&lt;span class="icon-who-we-are"&gt;&lt;/span&gt;&lt;/a&gt;<br/>
+        &lt;div class="active mobile-phone-content"&gt; &lt;a href="tel:@Model.phone"&gt; &lt;strong&gt;@Model.phone&lt;/strong&gt; &lt;span&gt;Tap to call now&lt;/span&gt; &lt;/a&gt;<br/>
+        &lt;/div&gt;<br/>
+        &lt;div class="mobile-location-content"&gt; &lt;a href="maps:q=@Model.fullAddress" target="_blank"&gt;@Model.add1&lt;br&gt;<br/>
         @if (Model.add2 != null)
         {
-            @: @Model.add2&lt; br & gt;<br />
+            @: @Model.add2&lt;br&gt;<br/>
         }
-        @Model.city&lt;span&gt;Tap to navigate&lt;/span&gt; &lt;/a&gt;<br />
-        &lt;/div&gt;<br />
-        &lt;div class="mobile-hours-content"&gt; &lt;strong&gt;@Model.days1&lt;/strong&gt;&lt;br&gt;<br />
-        @Model.hours1 @Model.ampm1 to @Model.hours2 @Model.ampm2&lt;br&gt;<br />
+        @Model.city&lt;span&gt;Tap to navigate&lt;/span&gt; &lt;/a&gt;<br/>
+        &lt;/div&gt;<br/>
+        &lt;div class="mobile-hours-content"&gt; &lt;strong&gt;@Model.days1&lt;/strong&gt;&lt;br&gt;<br/>
+        @Model.hours1 @Model.ampm1 to @Model.hours2 @Model.ampm2&lt;br&gt;<br/>
         @if (Model.multiDay)
         {
-            @:<br />&lt; strong & gt; @Model.days2 & lt;/ strong & gt; &lt; br & gt;<br />
-            @: @Model.hours3 @Model.ampm3 to @Model.hours4 @Model.ampm4 & lt; br & gt;<br />
+            @:<br/>&lt;strong&gt; @Model.days2 &lt;/strong&gt; &lt;br&gt;<br/>
+            @: @Model.hours3 @Model.ampm3 to @Model.hours4 @Model.ampm4 &lt;br&gt;<br/>
 
 
 
 
         }
 
-        &lt;/div&gt;<br />
-        &lt;div class="mobile-info-content"&gt;<br />
-        &lt;a href="tel:@Model.phone"&gt;<br />
-        &lt;strong&gt;Phone&lt;/strong&gt;&lt;br&gt;<br />
-        @Model.phone&lt;/a&gt;&lt;br&gt;<br />
-        &lt;strong&gt;Fax&lt;/strong&gt;&lt;br&gt;<br />
-        @Model.fax&lt;br&gt;<br />
-        &lt;/div&gt;<br />
-        &lt;/div&gt;<br />
-        <br />
-        &lt;!--DESKTOP CONTACT SIDEBAR--&gt;<br />
-        &lt;div class="desktop-contact-drawer"&gt;<br />
-        &lt;div class="phone"&gt;&lt;a href="tel:@Model.phone"&gt;@Model.phone&lt;/a&gt;<br />
-        &lt;/div&gt;<br />
+        &lt;/div&gt;<br/>
+        &lt;div class="mobile-info-content"&gt;<br/>
+        &lt;a href="tel:@Model.phone"&gt;<br/>
+        &lt;strong&gt;Phone&lt;/strong&gt;&lt;br&gt;<br/>
+        @Model.phone&lt;/a&gt;&lt;br&gt;<br/>
+        &lt;strong&gt;Fax&lt;/strong&gt;&lt;br&gt;<br/>
+        @Model.fax&lt;br&gt;<br/>
+        &lt;/div&gt;<br/>
+        &lt;/div&gt;<br/>
+        <br/>
+        &lt;!--DESKTOP CONTACT SIDEBAR--&gt;<br/>
+        &lt;div class="desktop-contact-drawer"&gt;<br/>
+        &lt;div class="phone"&gt;&lt;a href="tel:@Model.phone"&gt;@Model.phone&lt;/a&gt;<br/>
+        &lt;/div&gt;<br/>
         &lt;div class="address"&gt; &lt;span class="icon icon-location-nh"&gt;&lt;/span&gt; &lt;a href="@Model.googUrl" target="_blank"&gt;
-        @Model.add1&lt;br&gt;<br />
+        @Model.add1&lt;br&gt;<br/>
         @if (Model.add2 != null)
         {
-            @: @Model.add2&lt; br & gt;<br />
+            @: @Model.add2&lt;br&gt;<br/>
         }
 
-        @Model.city&lt;/a&gt;<br />
-        &lt;/div&gt;<br />
-        &lt;h6&gt;&lt;a href="#" class="hours-link"&gt;&lt;span class="icon-triangle-right"&gt;&lt;/span&gt; Hours&lt;/a&gt;&lt;/h6&gt;<br />
-        &lt;div class="hours"&gt; &lt;strong&gt;@Model.days1&lt;/strong&gt;&lt;br&gt;<br />
+        @Model.city&lt;/a&gt;<br/>
+        &lt;/div&gt;<br/>
+        &lt;h6&gt;&lt;a href="#" class="hours-link"&gt;&lt;span class="icon-triangle-right"&gt;&lt;/span&gt; Hours&lt;/a&gt;&lt;/h6&gt;<br/>
+        &lt;div class="hours"&gt; &lt;strong&gt;@Model.days1&lt;/strong&gt;&lt;br&gt;<br/>
         @Model.hours1 @Model.ampm1 to @Model.hours2 @Model.ampm2&lt;br&gt;
         @if (Model.multiDay)
         {
 
-            @:<br />&lt; strong & gt; @Model.days2 & lt;/ strong & gt; &lt; br & gt;<br />
-            @: @Model.hours3 @Model.ampm3 to @Model.hours4 @Model.ampm4 & lt; br & gt;<br />
+            @:<br/>&lt;strong&gt; @Model.days2 &lt;/strong&gt; &lt;br&gt;<br/>
+            @: @Model.hours3 @Model.ampm3 to @Model.hours4 @Model.ampm4 &lt;br&gt;<br/>
 
 
         }
-        &lt;/div&gt;<br />
-        &lt;h6&gt;&lt;a href="#" class="contact-link"&gt;&lt;span class="icon-triangle-right"&gt;&lt;/span&gt; Contact Us&lt;/a&gt;&lt;/h6&gt;<br />
-        &lt;div class="contact"&gt;<br />
-        &lt;a href="tel:@Model.phone"&gt;<br />
-        &lt;strong&gt;Phone&lt;/strong&gt;&lt;br&gt;<br />
-        @Model.phone&lt;br&gt;<br />
-        &lt;/a&gt;<br />
-        &lt;strong&gt;Fax&lt;/strong&gt;&lt;br&gt;<br />
-        @Model.fax&lt;br&gt;<br />
-        &lt;/div&gt;<br />
-        &lt;/div&gt;<br />
-        &lt;/div&gt;<br />
-        &lt;/div&gt;<br />
-        <br />
+        &lt;/div&gt;<br/>
+        &lt;h6&gt;&lt;a href="#" class="contact-link"&gt;&lt;span class="icon-triangle-right"&gt;&lt;/span&gt; Contact Us&lt;/a&gt;&lt;/h6&gt;<br/>
+        &lt;div class="contact"&gt;<br/>
+        &lt;a href="tel:@Model.phone"&gt;<br/>
+        &lt;strong&gt;Phone&lt;/strong&gt;&lt;br&gt;<br/>
+        @Model.phone&lt;br&gt;<br/>
+        &lt;/a&gt;<br/>
+        &lt;strong&gt;Fax&lt;/strong&gt;&lt;br&gt;<br/>
+        @Model.fax&lt;br&gt;<br/>
+        &lt;/div&gt;<br/>
+        &lt;/div&gt;<br/>
+        &lt;/div&gt;<br/>
+        &lt;/div&gt;<br/>
+        <br/>
 
         <h3>Sidebar Navigation</h3>
 
-        &lt;!--MOBILE STICKY NAV--&gt; <br />
-        &lt;div class="row"&gt; <br />
-        &lt;div class="hidden-xl hidden-lg hidden-md" id="sticky-nav"&gt; <br />
-        &lt;a href="/clinic-locations/@Model.url/appointments.aspx" class="appointments sidebar-link"&gt;&lt;span class="icon-schedule-an-appointment"&gt;&lt;/span&gt;Appointments&lt;/a&gt; <br />
-        &lt;a href="/clinic-locations/@Model.url/our-providers.aspx" class="providers sidebar-link "&gt;&lt;span class="icon-find-a-doctor"&gt;&lt;/span&gt;Our Providers&lt;/a&gt; <br />
-        &lt;a href="/clinic-locations/@Model.url/our-services.aspx" class="services sidebar-link "&gt;&lt;span class="icon-medical-services"&gt;&lt;/span&gt;Our Services&lt;/a&gt; <br />
-        &lt;a href="/clinic-locations/@Model.url/location.aspx" class="location sidebar-link "&gt;&lt;span class="icon-nh-location-pin"&gt;&lt;/span&gt;Location&lt;/a&gt; <br />
-        &lt;/div&gt; <br />
-        <br />
-        &lt;!--DESKTOP SIDEBAR NAV--&gt; <br />
-        &lt;div class="hidden-xs hidden-sm"&gt; <br />
-        &lt;a href="/clinic-locations/@Model.url/appointments.aspx" class="appointments sidebar-link"&gt;Appointments&lt;span class="icon-tout-arrow-right2"&gt;&lt;/span&gt;&lt;/a&gt; <br />
-        &lt;a href="/clinic-locations/@Model.url/our-providers.aspx" class="providers sidebar-link "&gt;Our Providers&lt;span class="icon-tout-arrow-right2"&gt;&lt;/span&gt;&lt;/a&gt; <br />
-        &lt;a href="/clinic-locations/@Model.url/our-services.aspx" class="services sidebar-link "&gt;Our Services&lt;span class="icon-tout-arrow-right2"&gt;&lt;/span&gt;&lt;/a&gt; <br />
-        &lt;a href="/clinic-locations/@Model.url/location.aspx" class="location sidebar-link "&gt;Location&lt;span class="icon-tout-arrow-right2"&gt;&lt;/span&gt;&lt;/a&gt; <br />
-        &lt;/div&gt; <br />
-        &lt;/div&gt; <br />
-        <br />
-        <br />
+        &lt;!--MOBILE STICKY NAV--&gt; <br/>
+        &lt;div class="row"&gt; <br/>
+        &lt;div class="hidden-xl hidden-lg hidden-md" id="sticky-nav"&gt; <br/>
+        &lt;a href="/clinic-locations/@Model.url/appointments.aspx" class="appointments sidebar-link"&gt;&lt;span class="icon-schedule-an-appointment"&gt;&lt;/span&gt;Appointments&lt;/a&gt; <br/>
+        &lt;a href="/clinic-locations/@Model.url/our-providers.aspx" class="providers sidebar-link "&gt;&lt;span class="icon-find-a-doctor"&gt;&lt;/span&gt;Our Providers&lt;/a&gt; <br/>
+        &lt;a href="/clinic-locations/@Model.url/our-services.aspx" class="services sidebar-link "&gt;&lt;span class="icon-medical-services"&gt;&lt;/span&gt;Our Services&lt;/a&gt; <br/>
+        &lt;a href="/clinic-locations/@Model.url/location.aspx" class="location sidebar-link "&gt;&lt;span class="icon-nh-location-pin"&gt;&lt;/span&gt;Location&lt;/a&gt; <br/>
+        &lt;/div&gt; <br/>
+        <br/>
+        &lt;!--DESKTOP SIDEBAR NAV--&gt; <br/>
+        &lt;div class="hidden-xs hidden-sm"&gt; <br/>
+        &lt;a href="/clinic-locations/@Model.url/appointments.aspx" class="appointments sidebar-link"&gt;Appointments&lt;span class="icon-tout-arrow-right2"&gt;&lt;/span&gt;&lt;/a&gt; <br/>
+        &lt;a href="/clinic-locations/@Model.url/our-providers.aspx" class="providers sidebar-link "&gt;Our Providers&lt;span class="icon-tout-arrow-right2"&gt;&lt;/span&gt;&lt;/a&gt; <br/>
+        &lt;a href="/clinic-locations/@Model.url/our-services.aspx" class="services sidebar-link "&gt;Our Services&lt;span class="icon-tout-arrow-right2"&gt;&lt;/span&gt;&lt;/a&gt; <br/>
+        &lt;a href="/clinic-locations/@Model.url/location.aspx" class="location sidebar-link "&gt;Location&lt;span class="icon-tout-arrow-right2"&gt;&lt;/span&gt;&lt;/a&gt; <br/>
+        &lt;/div&gt; <br/>
+        &lt;/div&gt; <br/>
+        <br/>
+        <br/>
 
 
         <h3>Sidebar Map</h3>
@@ -120,151 +120,158 @@
 
         <h3>Appointments Banner</h3>
 
-        &lt;header style="background: url('/Portals/92/Assets/Images/Clinic_Microsites/Banners/*') 0% 0% / cover no-repeat scroll transparent;"&gt; <br />
-        &lt;a href="/clinic-locations/@Model.url"&gt; <br />
-        &lt;div class="overlay"&gt; <br />
-        &lt;div class="container"&gt; <br />
-        &lt;h1&gt;@Model.busName&lt;span&gt;@Model.geotag&lt;/span&gt;&lt;/h1&gt; <br />
-        &lt;/div&gt; <br />
-        &lt;/div&gt; <br />
-        &lt;/a&gt; <br />
-        &lt;/header&gt; <br />
-        &lt;!-- SECTION HEADER FOR CHILD PAGES ONLY--&gt; <br />
-        &lt;div class="container-fluid section-header appointments"&gt; <br />
-        &lt;div class="container"&gt; <br />
-        &lt;h2&gt;Appointments&lt;/h2&gt; <br />
-        &lt;/div&gt; <br />
-        &lt;/div&gt; <br />
+        &lt;header style="background: url('/Portals/92/Assets/Images/Clinic_Microsites/Banners/@Model.banners[1]') 0% 0% / cover no-repeat scroll transparent;"&gt; <br/>
+        &lt;a href="/clinic-locations/@Model.url"&gt; <br/>
+        &lt;div class="overlay"&gt; <br/>
+        &lt;div class="container"&gt; <br/>
+        &lt;h1&gt;@Model.busName&lt;span&gt;@Model.geotag&lt;/span&gt;&lt;/h1&gt; <br/>
+        &lt;/div&gt; <br/>
+        &lt;/div&gt; <br/>
+        &lt;/a&gt; <br/>
+        &lt;/header&gt; <br/>
+        &lt;!-- SECTION HEADER FOR CHILD PAGES ONLY--&gt; <br/>
+        &lt;div class="container-fluid section-header appointments"&gt; <br/>
+        &lt;div class="container"&gt; <br/>
+        &lt;h2&gt;Appointments&lt;/h2&gt; <br/>
+        &lt;/div&gt; <br/>
+        &lt;/div&gt; <br/>
 
         <h3>Providers Banner</h3>
 
-        &lt;header style="background: url('/Portals/92/Assets/Images/Clinic_Microsites/Banners/*') 0% 0% / cover no-repeat scroll transparent;"&gt; <br />
-        &lt;a href="/clinic-locations/@Model.url"&gt; <br />
-        &lt;div class="overlay"&gt; <br />
-        &lt;div class="container"&gt; <br />
-        &lt;h1&gt;@Model.busName&lt;span&gt;@Model.geotag&lt;/span&gt;&lt;/h1&gt; <br />
-        &lt;/div&gt; <br />
-        &lt;/div&gt; <br />
-        &lt;/a&gt; <br />
-        &lt;/header&gt; <br />
-        &lt;!-- SECTION HEADER FOR CHILD PAGES ONLY--&gt; <br />
-        &lt;div class="container-fluid section-header providers"&gt; <br />
-        &lt;div class="container"&gt; <br />
-        &lt;h2&gt;Our providers&lt;/h2&gt; <br />
-        &lt;/div&gt; <br />
-        &lt;/div&gt; <br />
+        &lt;header style="background: url('/Portals/92/Assets/Images/Clinic_Microsites/Banners/@Model.banners[2]') 0% 0% / cover no-repeat scroll transparent;"&gt; <br/>
+        &lt;a href="/clinic-locations/@Model.url"&gt; <br/>
+        &lt;div class="overlay"&gt; <br/>
+        &lt;div class="container"&gt; <br/>
+        &lt;h1&gt;@Model.busName&lt;span&gt;@Model.geotag&lt;/span&gt;&lt;/h1&gt; <br/>
+        &lt;/div&gt; <br/>
+        &lt;/div&gt; <br/>
+        &lt;/a&gt; <br/>
+        &lt;/header&gt; <br/>
+        &lt;!-- SECTION HEADER FOR CHILD PAGES ONLY--&gt; <br/>
+        &lt;div class="container-fluid section-header providers"&gt; <br/>
+        &lt;div class="container"&gt; <br/>
+        &lt;h2&gt;Our providers&lt;/h2&gt; <br/>
+        &lt;/div&gt; <br/>
+        &lt;/div&gt; <br/>
 
         <h3>Services Banner</h3>
 
-        &lt;header style="background: url('/Portals/92/Assets/Images/Clinic_Microsites/Banners/*') 0% 0% / cover no-repeat scroll transparent;"&gt; <br />
-        &lt;a href="/clinic-locations/@Model.url"&gt; <br />
-        &lt;div class="overlay"&gt; <br />
-        &lt;div class="container"&gt; <br />
-        &lt;h1&gt;@Model.busName&lt;span&gt;@Model.geotag&lt;/span&gt;&lt;/h1&gt; <br />
-        &lt;/div&gt; <br />
-        &lt;/div&gt; <br />
-        &lt;/a&gt; <br />
-        &lt;/header&gt; <br />
-        &lt;!-- SECTION HEADER FOR CHILD PAGES ONLY--&gt; <br />
-        &lt;div class="container-fluid section-header services"&gt; <br />
-        &lt;div class="container"&gt; <br />
-        &lt;h2&gt;Our services&lt;/h2&gt; <br />
-        &lt;/div&gt; <br />
-        &lt;/div&gt; <br />
+        &lt;header style="background: url('/Portals/92/Assets/Images/Clinic_Microsites/Banners/@Model.banners[3]') 0% 0% / cover no-repeat scroll transparent;"&gt; <br/>
+        &lt;a href="/clinic-locations/@Model.url"&gt; <br/>
+        &lt;div class="overlay"&gt; <br/>
+        &lt;div class="container"&gt; <br/>
+        &lt;h1&gt;@Model.busName&lt;span&gt;@Model.geotag&lt;/span&gt;&lt;/h1&gt; <br/>
+        &lt;/div&gt; <br/>
+        &lt;/div&gt; <br/>
+        &lt;/a&gt; <br/>
+        &lt;/header&gt; <br/>
+        &lt;!-- SECTION HEADER FOR CHILD PAGES ONLY--&gt; <br/>
+        &lt;div class="container-fluid section-header services"&gt; <br/>
+        &lt;div class="container"&gt; <br/>
+        &lt;h2&gt;Our services&lt;/h2&gt; <br/>
+        &lt;/div&gt; <br/>
+        &lt;/div&gt; <br/>
 
         <h3>Location Banner</h3>
 
-        &lt;header style="background: url('/Portals/92/Assets/Images/Clinic_Microsites/Banners/*') 0% 0% / cover no-repeat scroll transparent;"&gt; <br />
-        &lt;a href="/clinic-locations/@Model.url"&gt; <br />
-        &lt;div class="overlay"&gt; <br />
-        &lt;div class="container"&gt; <br />
-        &lt;h1&gt;@Model.busName&lt;span&gt;@Model.geotag&lt;/span&gt;&lt;/h1&gt; <br />
-        &lt;/div&gt; <br />
-        &lt;/div&gt; <br />
-        &lt;/a&gt; <br />
-        &lt;/header&gt; <br />
-        &lt;!-- SECTION HEADER FOR CHILD PAGES ONLY--&gt; <br />
-        &lt;div class="container-fluid section-header location"&gt; <br />
-        &lt;div class="container"&gt; <br />
-        &lt;h2&gt;Location&lt;/h2&gt; <br />
-        &lt;/div&gt; <br />
-        &lt;/div&gt; <br />
+        &lt;header style="background: url('/Portals/92/Assets/Images/Clinic_Microsites/Banners/@Model.banners[4]') 0% 0% / cover no-repeat scroll transparent;"&gt; <br/>
+        &lt;a href="/clinic-locations/@Model.url"&gt; <br/>
+        &lt;div class="overlay"&gt; <br/>
+        &lt;div class="container"&gt; <br/>
+        &lt;h1&gt;@Model.busName&lt;span&gt;@Model.geotag&lt;/span&gt;&lt;/h1&gt; <br/>
+        &lt;/div&gt; <br/>
+        &lt;/div&gt; <br/>
+        &lt;/a&gt; <br/>
+        &lt;/header&gt; <br/>
+        &lt;!-- SECTION HEADER FOR CHILD PAGES ONLY--&gt; <br/>
+        &lt;div class="container-fluid section-header location"&gt; <br/>
+        &lt;div class="container"&gt; <br/>
+        &lt;h2&gt;Location&lt;/h2&gt; <br/>
+        &lt;/div&gt; <br/>
+        &lt;/div&gt; <br/>
 
         <h3>Location Details</h3>
-        &lt;div class="location-details"&gt; <br />
-        &lt;div class="map-container"&gt; <br />
-        &lt;iframe src="@Model.embedUrl" style="border: 0px;" class="map" frameborder="0"&gt; <br />
-        &lt;/iframe&gt; <br />
-        &lt;/div&gt; <br />
-        &lt;h3&gt;Endocrinology & thyroid clinic&lt;/h3&gt; <br />
-        &lt;div class="col-md-6"&gt; <br />
-        &lt;div class="clearfix"&gt; <br />
-        &lt;/div&gt; <br />
-        <br />
+        &lt;div class="location-details"&gt; <br/>
+        &lt;div class="map-container"&gt; <br/>
+        &lt;iframe src="@Model.embedUrl" style="border: 0px;" class="map" frameborder="0"&gt; <br/>
+        &lt;/iframe&gt; <br/>
+        &lt;/div&gt; <br/>
+        &lt;h3&gt;@Model.geotag @Model.busName clinic&lt;/h3&gt; <br/>
+        &lt;div class="col-md-6"&gt; <br/>
+        &lt;div class="clearfix"&gt; <br/>
+        &lt;/div&gt; <br/>
+        <br/>
 
 
-        &lt;!-- address --&gt; <br />
-        <br />
+        &lt;!-- address --&gt; <br/>
+        <br/>
 
-        &lt;span class="icon icon-location-nh"&gt;&lt;/span&gt; <br />
-        &lt;div class="info"&gt; <br />
-        @Model.add1&lt;br&gt; <br />
+        &lt;span class="icon icon-location-nh"&gt;&lt;/span&gt; <br/>
+        &lt;div class="info"&gt; <br/>
+        @Model.add1&lt;br&gt; <br/>
         @if (Model.add2 != null)
         {
-            @: @Model.add2&lt; br & gt;<br />
+            @: @Model.add2&lt;br&gt;<br/>
         }
-        @Model.city <br />
-        &lt;/div&gt; <br />
-        &lt;div class="clearfix"&gt; <br />
-        &lt;/div&gt; <br />
-        <br />
-        &lt;!-- hours --&gt; <br />
-        <br />
-        <br />
-        &lt;span class="icon icon-wait-time"&gt;&lt;/span&gt; <br />
-        &lt;div class="info"&gt; <br />
-        Monday to Thursday&lt;br&gt; <br />
-        8 a.m. to noon, and 1 to 4 p.m.&lt;br&gt; <br />
-        Friday&lt;br&gt; <br />
-        8 a.m. to noon <br />
-        &lt;/div&gt; <br />
-        &lt;/div&gt; <br />
-        &lt;div class="col-md-6"&gt; <br />
-        &lt;div class="clearfix"&gt; <br />
-        &lt;/div&gt; <br />
-        <br />
-        &lt;!-- phone --&gt; <br />
-        <br />
-        <br />
-        &lt;span class="icon icon-phone"&gt;&lt;/span&gt; <br />
-        &lt;div class="info"&gt; <br />
-        Phone&lt;br&gt; <br />
-        &lt;div class="phone"&gt;@Model.phone <br />
-        &lt;/div&gt; <br />
-        &lt;/div&gt; <br />
-        &lt;div class="clearfix"&gt; <br />
-        &lt;/div&gt; <br />
-        <br />
-        &lt;!-- fax --&gt; <br />
-        <br />
-        <br />
-        &lt;span class="icon icon-fax"&gt;&lt;/span&gt; <br />
-        &lt;div class="info"&gt; <br />
-        Fax&lt;br&gt; <br />
-        &lt;div class="phone"&gt;@Model.fax <br />
-        &lt;/div&gt; <br />
-        &lt;/div&gt; <br />
-        &lt;/div&gt; <br />
-        &lt;/div&gt; <br />
-        &lt;p&gt;&nbsp; <br />
-        &lt;/p&gt; <br />
-        &lt;a href="/clinic-locations.aspx?pname=*" class="additional-locations-tout"&gt; <br />
-        &lt;span class="icon-multiple-locations"&gt;&lt;/span&gt; <br />
-        &lt;div class="text-container"&gt; <br />
-        &lt;div class="heading"&gt;Additional Locations <br />
-        &lt;/div&gt; <br />
-        &lt;div class="text"&gt;Find more * locations near you <br />
-        &lt;/div&gt; <br />
-        &lt;/div&gt; <br />
-        &lt;span class="icon-tout-arrow-right"&gt;&lt;/span&gt; <br />
-        &lt;/a&gt; <br /> 
+        @Model.city <br/>
+        &lt;/div&gt; <br/>
+        &lt;div class="clearfix"&gt; <br/>
+        &lt;/div&gt; <br/>
+        <br/>
+        &lt;!-- hours --&gt; <br/>
+        <br/>
+        <br/>
+        &lt;span class="icon icon-wait-time"&gt;&lt;/span&gt; <br/>
+        &lt;div class="info"&gt; <br/>
+        @Model.days1&lt;br&gt; <br/>
+        @Model.hours1 @Model.ampm1 to @Model.hours2 @Model.ampm2&lt;br&gt;<br/>
+         @if (Model.days2 != null)
+        {
+
+            @:<br/> @Model.days2 &lt;br&gt;<br/>
+            @: @Model.hours3 @Model.ampm3 to @Model.hours4 @Model.ampm4 &lt;br&gt;<br/>
+
+
+        }<br/>
+        
+        &lt;/div&gt; <br/>
+        &lt;/div&gt; <br/>
+        &lt;div class="col-md-6"&gt; <br/>
+        &lt;div class="clearfix"&gt; <br/>
+        &lt;/div&gt; <br/>
+        <br/>
+        &lt;!-- phone --&gt; <br/>
+        <br/>
+        <br/>
+        &lt;span class="icon icon-phone"&gt;&lt;/span&gt; <br/>
+        &lt;div class="info"&gt; <br/>
+        Phone&lt;br&gt; <br/>
+        &lt;div class="phone"&gt;@Model.phone <br/>
+        &lt;/div&gt; <br/>
+        &lt;/div&gt; <br/>
+        &lt;div class="clearfix"&gt; <br/>
+        &lt;/div&gt; <br/>
+        <br/>
+        &lt;!-- fax --&gt; <br/>
+        <br/>
+        <br/>
+        &lt;span class="icon icon-fax"&gt;&lt;/span&gt; <br/>
+        &lt;div class="info"&gt; <br/>
+        Fax&lt;br&gt; <br/>
+        &lt;div class="phone"&gt;@Model.fax <br/>
+        &lt;/div&gt; <br/>
+        &lt;/div&gt; <br/>
+        &lt;/div&gt; <br/>
+        &lt;/div&gt; <br/>
+        &lt;p&gt;&nbsp; <br/>
+        &lt;/p&gt; <br/>
+        &lt;a href="/clinic-locations.aspx?pname=*" class="additional-locations-tout"&gt; <br/>
+        &lt;span class="icon-multiple-locations"&gt;&lt;/span&gt; <br/>
+        &lt;div class="text-container"&gt; <br/>
+        &lt;div class="heading"&gt;Additional Locations <br/>
+        &lt;/div&gt; <br/>
+        &lt;div class="text"&gt;Find more * locations near you <br/>
+        &lt;/div&gt; <br/>
+        &lt;/div&gt; <br/>
+        &lt;span class="icon-tout-arrow-right"&gt;&lt;/span&gt; <br/>
+        &lt;/a&gt; <br/> 
